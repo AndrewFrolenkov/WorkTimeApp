@@ -13,6 +13,7 @@
 		52982F012B012A5600FF8F7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52982F002B012A5600FF8F7A /* ViewController.swift */; };
 		52982F062B012A5800FF8F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52982F052B012A5800FF8F7A /* Assets.xcassets */; };
 		52982F092B012A5800FF8F7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52982F072B012A5800FF8F7A /* LaunchScreen.storyboard */; };
+		52982F162B014E6D00FF8F7A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52982F152B014E6D00FF8F7A /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		52982F052B012A5800FF8F7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52982F082B012A5800FF8F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52982F0A2B012A5800FF8F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52982F152B014E6D00FF8F7A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		6EB8FAAC5970428B728DEF2C /* Pods-WorkTimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkTimeApp.debug.xcconfig"; path = "Target Support Files/Pods-WorkTimeApp/Pods-WorkTimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DD905ABB8F27EBBAEE78C9C0 /* Pods-WorkTimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkTimeApp.release.xcconfig"; path = "Target Support Files/Pods-WorkTimeApp/Pods-WorkTimeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 		52982EFB2B012A5600FF8F7A /* WorkTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				52982F132B014D2C00FF8F7A /* Resources */,
 				52982F112B012B1400FF8F7A /* Application */,
 				52982F102B012AEA00FF8F7A /* SupportingFiles */,
 				52982F002B012A5600FF8F7A /* ViewController.swift */,
@@ -96,6 +99,22 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		52982F132B014D2C00FF8F7A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52982F142B014E0400FF8F7A /* Generated */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52982F142B014E0400FF8F7A /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				52982F152B014E6D00FF8F7A /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		8CA3D4078BF250E1CC042A4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +135,7 @@
 				52982EF62B012A5600FF8F7A /* Frameworks */,
 				52982EF72B012A5600FF8F7A /* Resources */,
 				F48F2D50110140773323C0B3 /* [CP] Embed Pods Frameworks */,
+				52982F122B014CFB00FF8F7A /* R Generate */,
 			);
 			buildRules = (
 			);
@@ -194,6 +214,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		52982F122B014CFB00FF8F7A /* R Generate */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R Generate";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/WorkTimeApp/Resources/Generated/R.generated.swift\"\n";
+		};
 		F48F2D50110140773323C0B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,6 +260,7 @@
 				52982F012B012A5600FF8F7A /* ViewController.swift in Sources */,
 				52982EFD2B012A5600FF8F7A /* AppDelegate.swift in Sources */,
 				52982EFF2B012A5600FF8F7A /* SceneDelegate.swift in Sources */,
+				52982F162B014E6D00FF8F7A /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
